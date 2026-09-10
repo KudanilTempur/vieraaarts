@@ -42,21 +42,21 @@ export default function Commission() {
     };
 
     return (
-        <div className="w-full min-h-screen bg-[#F4F8FA] flex flex-col items-center py-12 px-6 font-sans pt-20">
+        <div className="w-full min-h-screen bg-[#F4F8FA] flex flex-col items-center py-10 px-4 sm:px-6 font-sans pt-24">
 
             {/* Header Title */}
-            <div className="text-center max-w-2xl mb-16">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-[#16377D] mb-4">
+            <div className="text-center max-w-2xl mb-12 sm:mb-16">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16377D] mb-4">
                     Commission Rates & Terms
                 </h1>
-                <p className="text-lg md:text-xl text-[#16377D] leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-[#16377D] leading-relaxed">
                     Welcome, and <span className="font-bold">thank you</span> for stopping by my little corner! Here's everything you <span className="font-bold">need to know</span> before we make something cute together
                 </p>
             </div>
 
             {/* Rules Section */}
-            <div className="w-full max-w-5xl flex flex-col items-center mb-20">
-                <h2 className="text-2xl md:text-3xl font-semibold text-[#16377D] mb-8">
+            <div className="w-full max-w-5xl flex flex-col items-center mb-16 sm:mb-20">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#16377D] mb-6 sm:mb-8 text-center">
                     Let's <span className="font-bold text-[#16377D]">read</span> before commissioning!
                 </h2>
 
@@ -64,64 +64,64 @@ export default function Commission() {
                     {/* I Can / Cannot Draw */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Can Draw */}
-                        <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-6">
-                            <h3 className="text-xl font-bold text-[#16377D] mb-4">
+                        <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-5 sm:p-6">
+                            <h3 className="text-lg sm:text-xl font-bold text-[#16377D] mb-4">
                                 I <span className="text-[#16377D]">can</span> draw
                             </h3>
-                            <ul className="space-y-2 text-[#16377D] font-medium">
-                                <li className="flex items-center gap-2">
-                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain" />
-                                    SFW / NSFW
+                            <ul className="space-y-2.5 text-[#16377D] font-medium text-sm sm:text-base">
+                                <li className="flex items-center gap-2.5">
+                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain shrink-0" />
+                                    <span>SFW / NSFW</span>
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain" />
-                                    LGBT / straight ships
+                                <li className="flex items-center gap-2.5">
+                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain shrink-0" />
+                                    <span>LGBT / straight ships</span>
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain" />
-                                    Male / female characters
+                                <li className="flex items-center gap-2.5">
+                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain shrink-0" />
+                                    <span>Male / female characters</span>
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain" />
-                                    Nekomimi / slight mecha
+                                <li className="flex items-center gap-2.5">
+                                    <img src="/webdesign/check-circle.png" alt="check" className="w-5 h-5 object-contain shrink-0" />
+                                    <span>Nekomimi / slight mecha</span>
                                 </li>
                             </ul>
                         </div>
 
                         {/* Cannot Draw */}
-                        <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-6">
-                            <h3 className="text-xl font-bold text-[#16377D] mb-4">
+                        <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-5 sm:p-6">
+                            <h3 className="text-lg sm:text-xl font-bold text-[#16377D] mb-4">
                                 I <span className="text-[#16377D]">cannot</span> draw
                             </h3>
-                            <ul className="space-y-2 text-[#16377D] font-medium">
-                                <li className="flex items-center gap-2">
-                                    <img src="/webdesign/x-circle.png" alt="cannot" className="w-5 h-5 object-contain" />
-                                    Furry
+                            <ul className="space-y-2.5 text-[#16377D] font-medium text-sm sm:text-base">
+                                <li className="flex items-center gap-2.5">
+                                    <img src="/webdesign/x-circle.png" alt="cannot" className="w-5 h-5 object-contain shrink-0" />
+                                    <span>Furry</span>
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <img src="/webdesign/x-circle.png" alt="cannot" className="w-5 h-5 object-contain" />
-                                    Heavy armor
+                                <li className="flex items-center gap-2.5">
+                                    <img src="/webdesign/x-circle.png" alt="cannot" className="w-5 h-5 object-contain shrink-0" />
+                                    <span>Heavy armor</span>
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <img src="/webdesign/x-circle.png" alt="cannot" className="w-5 h-5 object-contain" />
-                                    Elderly / baby characters
+                                <li className="flex items-center gap-2.5">
+                                    <img src="/webdesign/x-circle.png" alt="cannot" className="w-5 h-5 object-contain shrink-0" />
+                                    <span>Elderly / baby characters</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     {/* Turnaround Time */}
-                    <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-6">
-                        <h3 className="text-xl font-bold text-[#16377D] mb-2">Turnaround time</h3>
-                        <p className="text-[#16377D] leading-relaxed font-medium">
+                    <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-5 sm:p-6">
+                        <h3 className="text-lg sm:text-xl font-bold text-[#16377D] mb-2">Turnaround time</h3>
+                        <p className="text-[#16377D] leading-relaxed font-medium text-sm sm:text-base">
                             1–7 days per piece, not counting queue time. I work about 4–5 hours a day, so thank you for your patience.
                         </p>
                     </div>
 
                     {/* Terms of Service */}
-                    <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-6">
-                        <h3 className="text-xl font-bold text-[#16377D] mb-3">Terms of service</h3>
-                        <ul className="list-disc list-inside space-y-1 text-[#16377D] font-medium">
+                    <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-5 sm:p-6">
+                        <h3 className="text-lg sm:text-xl font-bold text-[#16377D] mb-3">Terms of service</h3>
+                        <ul className="list-disc list-inside space-y-1.5 text-[#16377D] font-medium text-sm sm:text-base">
                             <li>Payment is made after the lineart stage.</li>
                             <li>No refunds once payment is sent.</li>
                             <li>Finished pieces may be posted as samples — let me know if you'd like yours kept private.</li>
@@ -130,36 +130,36 @@ export default function Commission() {
                     </div>
 
                     {/* Extra Charges */}
-                    <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-6">
-                        <h3 className="text-xl font-bold text-[#16377D] mb-4">Extra charges</h3>
-                        <div className="space-y-2 text-[#16377D] font-medium">
-                            <div className="flex justify-between">
+                    <div className="bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-5 sm:p-6">
+                        <h3 className="text-lg sm:text-xl font-bold text-[#16377D] mb-4">Extra charges</h3>
+                        <div className="space-y-2.5 text-[#16377D] font-medium text-sm sm:text-base">
+                            <div className="flex justify-between items-center gap-2">
                                 <span>• Detailed character</span>
-                                <span>+5% per detail</span>
+                                <span className="font-semibold text-right">+5% per detail</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between items-center gap-2">
                                 <span>• Detailed background</span>
-                                <span>+20% – 50%</span>
+                                <span className="font-semibold text-right">+20% – 50%</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between items-center gap-2">
                                 <span>• Commercial use</span>
-                                <span>2x base price</span>
+                                <span className="font-semibold text-right">2x base price</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between items-center gap-2">
                                 <span>• Extra revision</span>
-                                <span>+10% each</span>
+                                <span className="font-semibold text-right">+10% each</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between items-center gap-2">
                                 <span>• Extra character</span>
-                                <span>+20% per character</span>
+                                <span className="font-semibold text-right">+20% per character</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between items-center gap-2">
                                 <span>• Difficult pose</span>
-                                <span>+10%</span>
+                                <span className="font-semibold text-right">+10%</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between items-center gap-2">
                                 <span>• Rush commission</span>
-                                <span>+20% per day skipped</span>
+                                <span className="font-semibold text-right">+20% per day skipped</span>
                             </div>
                         </div>
                     </div>
@@ -167,56 +167,57 @@ export default function Commission() {
             </div>
 
             {/* Interactive Showcase Section */}
-            <div className="w-full max-w-5xl flex flex-col items-center mb-24">
-                <h2 className="text-2xl md:text-3xl font-semibold text-[#16377D] mb-10">
+            <div className="w-full max-w-5xl flex flex-col items-center mb-16 sm:mb-24">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#16377D] mb-8 sm:mb-10 text-center">
                     All set for a <span className="font-bold text-[#16377D]">commission</span>?
                 </h2>
 
                 <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
                     {/* Main Image Preview */}
-                    <div className="lg:col-span-6 aspect-5/4 bg-gray-200 rounded-2xl overflow-hidden shadow-sm border border-gray-200 flex items-center justify-center">
+                    <div className="lg:col-span-6 aspect-[5/4] bg-gray-200 rounded-2xl overflow-hidden shadow-sm border border-gray-200 flex items-center justify-center">
                         <img
                             src={activeImage}
                             alt={activeTab}
                             className="w-full h-full object-cover"
-                            onError={(e) => e.target.src = 'https://via.placeholder.com/400x500?text=Artwork+Preview'}
+                            onError={(e) => {
+                                e.currentTarget.src = "https://via.placeholder.com/400x500?text=Artwork+Preview";
+                            }}
                         />
                     </div>
 
                     {/* Thumbnails Sidebar */}
-                    <div className="lg:col-span-2 flex lg:flex-col gap-3 overflow-x-auto">
-                        {Array.from({ length: 3 }).map((_, idx) => {
-                            const artSrc = currentCategory.artworks[idx];
-                            return (
-                                <button
-                                    key={idx}
-                                    onClick={() => artSrc && setSelectedImgIndex(idx)}
-                                    className={`w-20 lg:w-full aspect-5/4 bg-gray-300 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${selectedImgIndex === idx && artSrc ? "border-[#1D4ED8]" : "border-transparent opacity-80"
-                                        }`}
-                                >
-                                    {artSrc ? (
-                                        <img src={artSrc} alt="thumbnail" className="w-full h-full object-cover" />
-                                    ) : (
-                                        <div className="w-full h-full bg-gray-300" />
-                                    )}
-                                </button>
-                            );
-                        })}
+                    <div className="lg:col-span-2 flex lg:flex-col gap-3 overflow-x-auto pb-2 lg:pb-0">
+                        {currentCategory.artworks.map((artSrc, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => setSelectedImgIndex(idx)}
+                                className={`w-20 lg:w-full aspect-[5/4] bg-gray-300 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${selectedImgIndex === idx
+                                        ? "border-[#1D4ED8]"
+                                        : "border-transparent opacity-80"
+                                    }`}
+                            >
+                                <img
+                                    src={artSrc}
+                                    alt={`thumbnail-${idx}`}
+                                    className="w-full h-full object-cover"
+                                />
+                            </button>
+                        ))}
                     </div>
 
                     {/* Detail & Tabs Box */}
-                    <div className="lg:col-span-4 bg-white border border-[#D0E2FF] rounded-2xl p-6 flex flex-col justify-between h-full min-h-[420px]">
+                    <div className="lg:col-span-4 bg-white border border-[#D0E2FF] rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full min-h-[380px] sm:min-h-[420px]">
                         <div>
-                            {/* Tabs Navbar */}
-                            <div className="flex justify-between items-center bg-[#F0F6FF] p-1 rounded-xl mb-6 text-xs font-semibold">
+                            {/* Tabs Navbar (Grid 2 Kolom di Mobile, 4 Kolom di Desktop) */}
+                            <div className="grid grid-cols-2 sm:grid-cols-4 bg-[#F0F6FF] p-1.5 rounded-xl mb-6 text-xs font-semibold gap-1.5">
                                 {Object.keys(commissionData).map((tab) => (
                                     <button
                                         key={tab}
                                         onClick={() => handleTabChange(tab)}
-                                        className={`px-2.5 py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === tab
-                                            ? "bg-[#3B82F6] text-white shadow-sm"
-                                            : "text-[#16377D] hover:text-gray-900"
+                                        className={`py-2 px-2 rounded-lg transition-all cursor-pointer text-center ${activeTab === tab
+                                                ? "bg-[#3B82F6] text-white shadow-sm"
+                                                : "text-[#16377D] hover:text-gray-900"
                                             }`}
                                     >
                                         {tab}
@@ -226,8 +227,12 @@ export default function Commission() {
 
                             {/* Pricing Info */}
                             <div className="mb-6">
-                                <div className="text-2xl font-extrabold text-[#16377D]">{currentCategory.idr}</div>
-                                <div className="text-lg font-bold text-[#16377D]">{currentCategory.usd}</div>
+                                <div className="text-2xl font-extrabold text-[#16377D]">
+                                    {currentCategory.idr}
+                                </div>
+                                <div className="text-lg font-bold text-[#16377D]">
+                                    {currentCategory.usd}
+                                </div>
                             </div>
 
                             {/* Payment Info */}
@@ -256,11 +261,11 @@ export default function Commission() {
             {/* Alternative Contact Section */}
             <div className="w-full max-w-5xl flex flex-col mb-12 relative">
                 <div className="w-full max-w-5xl z-10">
-                    <h3 className="text-xl md:text-2xl font-semibold text-[#16377D] mb-6">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#16377D] mb-4 sm:mb-6">
                         do not have <span className="font-bold text-[#16377D]">whatsapp</span>?
                     </h3>
 
-                    <div className="w-full md:w-72 bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-6">
+                    <div className="w-full md:w-72 bg-[#EBF3FC] border border-[#D0E2FF] rounded-2xl p-5 sm:p-6">
                         <h4 className="text-base font-bold text-[#16377D] mb-4">Contact me on</h4>
                         <div className="space-y-3 font-semibold text-[#16377D]">
                             <div className="flex items-center gap-3">
@@ -268,7 +273,7 @@ export default function Commission() {
                                     href="https://x.com/Vieer430"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 transition-transform shadow-sm"
+                                    className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 transition-transform shadow-sm shrink-0"
                                 >
                                     <img src="/webdesign/X-logo.png" alt="X" className="w-7 h-7 object-contain" />
                                 </a>
@@ -276,6 +281,7 @@ export default function Commission() {
                                     href="https://x.com/Vieer430"
                                     target="_blank"
                                     rel="noreferrer"
+                                    className="hover:underline"
                                 >
                                     <span>Vieer430</span>
                                 </a>
@@ -285,6 +291,7 @@ export default function Commission() {
                                     href="https://discord.com"
                                     target="_blank"
                                     rel="noreferrer"
+                                    className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 transition-transform shadow-sm shrink-0"
                                 >
                                     <img src="/webdesign/discord-logo.png" alt="Discord" className="w-7 h-7 object-contain" />
                                 </a>
@@ -292,6 +299,7 @@ export default function Commission() {
                                     href="https://discord.com"
                                     target="_blank"
                                     rel="noreferrer"
+                                    className="hover:underline"
                                 >
                                     <span>Vieer_a</span>
                                 </a>
@@ -300,11 +308,11 @@ export default function Commission() {
                     </div>
                 </div>
 
-                {/* Decorative Doodle Accent - Pindah posisi ke kanan */}
+                {/* Decorative Doodle Accent */}
                 <img
                     src="/webdesign/hero-images-2.png"
                     alt="Doodle"
-                    className="absolute bottom-0 right-4 md:right-12 w-28 md:w-36 object-contain pointer-events-none animate-bounce z-0"
+                    className="absolute bottom-0 right-2 sm:right-6 md:right-12 w-24 sm:w-28 md:w-36 object-contain pointer-events-none animate-bounce z-0 opacity-80 sm:opacity-100"
                     style={{ animationDuration: '4s' }}
                 />
             </div>
