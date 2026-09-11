@@ -34,7 +34,7 @@ export default function Commission() {
     const waMessage = encodeURIComponent(
         `Halo! Saya ingin pesan commission kategori *${activeTab}* (${currentCategory.idr} / ${currentCategory.usd}).`
     );
-    const waLink = `https://wa.me/6285179778270?text=${waMessage}`;
+    const waLink = `https://wa.me/6285111342521?text=${waMessage}`;
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
@@ -193,8 +193,8 @@ export default function Commission() {
                                 key={idx}
                                 onClick={() => setSelectedImgIndex(idx)}
                                 className={`w-20 lg:w-full aspect-[5/4] bg-gray-300 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${selectedImgIndex === idx
-                                        ? "border-[#1D4ED8]"
-                                        : "border-transparent opacity-80"
+                                    ? "border-[#1D4ED8]"
+                                    : "border-transparent opacity-80"
                                     }`}
                             >
                                 <img
@@ -216,8 +216,8 @@ export default function Commission() {
                                         key={tab}
                                         onClick={() => handleTabChange(tab)}
                                         className={`py-2 px-2 rounded-lg transition-all cursor-pointer text-center ${activeTab === tab
-                                                ? "bg-[#3B82F6] text-white shadow-sm"
-                                                : "text-[#16377D] hover:text-gray-900"
+                                            ? "bg-[#3B82F6] text-white shadow-sm"
+                                            : "text-[#16377D] hover:text-gray-900"
                                             }`}
                                     >
                                         {tab}
@@ -270,7 +270,7 @@ export default function Commission() {
                         <div className="space-y-3 font-semibold text-[#16377D]">
                             <div className="flex items-center gap-3">
                                 <a
-                                    href="https://x.com/Vieer430"
+                                    href="https://x.com/raannowe3"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 transition-transform shadow-sm shrink-0"
@@ -278,12 +278,12 @@ export default function Commission() {
                                     <img src="/webdesign/X-logo.png" alt="X" className="w-7 h-7 object-contain" />
                                 </a>
                                 <a
-                                    href="https://x.com/Vieer430"
+                                    href="https://x.com/raannowe3"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="hover:underline"
                                 >
-                                    <span>Vieer430</span>
+                                    <span>raannowe3</span>
                                 </a>
                             </div>
                             <div className="flex items-center gap-3">
@@ -297,6 +297,42 @@ export default function Commission() {
                                 </a>
                                 <a
                                     href="https://discord.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="hover:underline"
+                                >
+                                    <span>Vieer_a</span>
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <a
+                                    href="https://www.instagram.com/vieer_a?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 transition-transform shadow-sm shrink-0"
+                                >
+                                    <img src="/webdesign/Instagram-logo.png" alt="Instagram" className="w-7 h-7 object-contain" />
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/vieer_a?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="hover:underline"
+                                >
+                                    <span>Vieer_a</span>
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <a
+                                    href="https://vgen.co/vieer_a"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 transition-transform shadow-sm shrink-0"
+                                >
+                                    <img src="/webdesign/Vgen-logo.png" alt="Instagram" className="w-7 h-7 object-contain" />
+                                </a>
+                                <a
+                                    href="https://vgen.co/vieer_a"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="hover:underline"

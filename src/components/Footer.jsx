@@ -42,13 +42,22 @@ export default function Footer() {
                         <img src="/webdesign/X-logo.png" alt="X" className="w-4 h-4 object-contain" />
                     </a>
                     <a
-                        href="https://discord.com"
+                        href="https://www.instagram.com/vieer_a?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
                         target="_blank"
                         rel="noreferrer"
                         className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-xs"
-                        aria-label="Discord Profile"
+                        aria-label="Instagram Profile"
                     >
-                        <img src="/webdesign/discord-logo.png" alt="Discord" className="w-4 h-4 object-contain" />
+                        <img src="/webdesign/Instagram-logo.png" alt="Instagram" className="w-4 h-4 object-contain" />
+                    </a>
+                    <a
+                        href="https://vgen.co/vieer_a"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-9 h-9 rounded-full bg-white border border-[#D0E2FF] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-xs"
+                        aria-label="Vgen Profile"
+                    >
+                        <img src="/webdesign/Vgen-logo.png" alt="Vgen" className="w-4 h-4 object-contain" />
                     </a>
                 </div>
 
