@@ -135,7 +135,7 @@ export default function Commission() {
                         <div className="space-y-2.5 text-[#16377D] font-medium text-sm sm:text-base">
                             <div className="flex justify-between items-center gap-2">
                                 <span>• Detailed character</span>
-                                <span className="font-semibold text-right">+5% per detail</span>
+                                <span className="font-semibold text-right">(base price + 20%) + base price</span>
                             </div>
                             <div className="flex justify-between items-center gap-2">
                                 <span>• Detailed background</span>
