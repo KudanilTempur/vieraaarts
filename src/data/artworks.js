@@ -1,4 +1,4 @@
-const items4x5 = Array.from({ length: 8 }, (_, i) => ({
+const items4x5 = Array.from({ length: 9 }, (_, i) => ({
     id: i + 1,
     title: `Artwork ${i + 1}`,
     image: `/artworks/4_5-artwork-${i + 1}.png`,

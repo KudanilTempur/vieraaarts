@@ -170,7 +170,7 @@ export default function Gallery() {
                     </h2>
 
                     <div className="mt-6 grid grid-cols-1 gap-3 sm:mt-[25px] sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-                        {artworks4x5.slice(0).map((artwork) => (
+                        {artworks4x5.slice(1).map((artwork) => (
                             <div
                                 key={artwork.id}
                                 className="group relative flex aspect-[5/4] w-full items-center justify-center bg-[#E5F3FF]/40"

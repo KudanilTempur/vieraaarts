@@ -4,7 +4,7 @@ const commissionData = {
     "Bust Up": {
         idr: "Rp 70k",
         usd: "$15",
-        artworks: ["/artworks/4_5-artwork-7.png"],
+        artworks: ["/artworks/4_5-artwork-7.png", "/artworks/4_5-artwork-9.png"],
     },
     "Half Body": {
         idr: "Rp 90k",
