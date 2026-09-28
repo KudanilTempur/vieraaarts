@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+// Pastikan path import AppContext sesuai dengan struktur foldermu
+import { AppContext } from "../context/AppContext";
 
-const commissionData = {
+// 1. Jadikan data hardcoded sebagai FALLBACK (cadangan)
+const defaultCommissionData = {
     "Bust Up": {
         idr: "Rp 70k",
         usd: "$15",
@@ -24,15 +27,39 @@ const commissionData = {
 };
 
 export default function Commission() {
-    const [activeTab, setActiveTab] = useState("Bust Up");
+    // 2. Ambil data dari Context dengan nama variabel yang sesuai (commissionData & commissionStatus)
+    const context = useContext(AppContext) || {};
+    const { commissionData: adminPrices, commissionStatus } = context;
+
+    // Status open/closed
+    const isCommissionOpen = commissionStatus ? commissionStatus === "OPEN" : true;
+
+    // 3. Gunakan data dari Admin jika ada, jika tidak gunakan defaultCommissionData
+    const commissionData = (adminPrices && Object.keys(adminPrices).length > 0)
+        ? adminPrices
+        : defaultCommissionData;
+
+    const categories = Object.keys(commissionData);
+
+    const [activeTab, setActiveTab] = useState(categories[0]);
     const [selectedImgIndex, setSelectedImgIndex] = useState(0);
 
-    const currentCategory = commissionData[activeTab];
-    const activeImage = currentCategory.artworks[selectedImgIndex] || currentCategory.artworks[0];
+    // 4. Efek pengaman: Jika Admin mengubah nama kategori dan tab aktif saat ini hilang, reset ke kategori pertama
+    useEffect(() => {
+        if (!categories.includes(activeTab)) {
+            setActiveTab(categories[0]);
+            setSelectedImgIndex(0);
+        }
+    }, [categories, activeTab]);
+
+    // 5. Perlindungan data bersarang (Nested Data Protection)
+    const currentCategory = commissionData[activeTab] || commissionData[categories[0]] || {};
+    const artworksList = Array.isArray(currentCategory.artworks) ? currentCategory.artworks : [];
+    const activeImage = artworksList[selectedImgIndex] || artworksList[0] || "";
 
     // Format pesan & link WhatsApp dinamis
     const waMessage = encodeURIComponent(
-        `Halo! Saya ingin pesan commission kategori *${activeTab}* (${currentCategory.idr} / ${currentCategory.usd}).`
+        `Halo! Saya ingin pesan commission kategori *${activeTab}* (${currentCategory.idr || '-'} / ${currentCategory.usd || '-'}).`
     );
     const waLink = `https://wa.me/6285111342521?text=${waMessage}`;
 
@@ -54,7 +81,7 @@ export default function Commission() {
                 </p>
             </div>
 
-            {/* Rules Section */}
+            {/* Rules Section (Tetap sama) */}
             <div className="w-full max-w-5xl flex flex-col items-center mb-16 sm:mb-20">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#16377D] mb-6 sm:mb-8 text-center">
                     Let's <span className="font-bold text-[#16377D]">read</span> before commissioning!
@@ -176,19 +203,23 @@ export default function Commission() {
 
                     {/* Main Image Preview */}
                     <div className="lg:col-span-6 aspect-[5/4] bg-gray-200 rounded-2xl overflow-hidden shadow-sm border border-gray-200 flex items-center justify-center">
-                        <img
-                            src={activeImage}
-                            alt={activeTab}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                                e.currentTarget.src = "https://via.placeholder.com/400x500?text=Artwork+Preview";
-                            }}
-                        />
+                        {activeImage ? (
+                            <img
+                                src={activeImage}
+                                alt={activeTab}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                    e.currentTarget.src = "https://via.placeholder.com/400x500?text=Artwork+Preview";
+                                }}
+                            />
+                        ) : (
+                            <span className="text-gray-500 font-medium">No Image Available</span>
+                        )}
                     </div>
 
                     {/* Thumbnails Sidebar */}
                     <div className="lg:col-span-2 flex lg:flex-col gap-3 overflow-x-auto pb-2 lg:pb-0">
-                        {currentCategory.artworks.map((artSrc, idx) => (
+                        {artworksList.map((artSrc, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setSelectedImgIndex(idx)}
@@ -209,9 +240,9 @@ export default function Commission() {
                     {/* Detail & Tabs Box */}
                     <div className="lg:col-span-4 bg-white border border-[#D0E2FF] rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full min-h-[380px] sm:min-h-[420px]">
                         <div>
-                            {/* Tabs Navbar (Grid 2 Kolom di Mobile, 4 Kolom di Desktop) */}
+                            {/* Tabs Navbar */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 bg-[#F0F6FF] p-1.5 rounded-xl mb-6 text-xs font-semibold gap-1.5">
-                                {Object.keys(commissionData).map((tab) => (
+                                {categories.map((tab) => (
                                     <button
                                         key={tab}
                                         onClick={() => handleTabChange(tab)}
@@ -228,10 +259,10 @@ export default function Commission() {
                             {/* Pricing Info */}
                             <div className="mb-6">
                                 <div className="text-2xl font-extrabold text-[#16377D]">
-                                    {currentCategory.idr}
+                                    {currentCategory.idr || "-"}
                                 </div>
                                 <div className="text-lg font-bold text-[#16377D]">
-                                    {currentCategory.usd}
+                                    {currentCategory.usd || "-"}
                                 </div>
                             </div>
 
@@ -244,21 +275,30 @@ export default function Commission() {
                             </div>
                         </div>
 
-                        {/* WhatsApp CTA */}
-                        <a
-                            href={waLink}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="w-full bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-bold py-3 rounded-xl text-center transition-colors shadow-sm block"
-                        >
-                            Order via Whatsapp
-                        </a>
+                        {/* WhatsApp CTA dengan tombol dinamis dari Admin (Open/Close) */}
+                        {isCommissionOpen ? (
+                            <a
+                                href={waLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="w-full bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-bold py-3 rounded-xl text-center transition-colors shadow-sm block"
+                            >
+                                Order via Whatsapp
+                            </a>
+                        ) : (
+                            <button
+                                disabled
+                                className="w-full bg-gray-400 text-white font-bold py-3 rounded-xl text-center cursor-not-allowed shadow-sm block"
+                            >
+                                Commission Closed
+                            </button>
+                        )}
                     </div>
 
                 </div>
             </div>
 
-            {/* Alternative Contact Section */}
+            {/* Alternative Contact Section (Tetap sama) */}
             <div className="w-full max-w-5xl flex flex-col mb-12 relative">
                 <div className="w-full max-w-5xl z-10">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#16377D] mb-4 sm:mb-6">

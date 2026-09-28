@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { artworks } from "../data/artworks";
+import { useApp } from "../context/AppContext";
 
 export default function Home() {
+    const { commissionStatus, commissionData, artworks } = useApp();
+
     // Artwork 16:9 untuk bagian "latest artwork"
     const latestArtworks = artworks
         .filter((artwork) => artwork.ratio === "16:9")
@@ -176,7 +179,10 @@ export default function Home() {
 
                 <div className="text-center">
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">
-                        Commission Status : <span className="font-bold text-[#3B82F6]">OPEN</span>
+                        Commission Status :{" "}
+                        <span className={`font-bold ${commissionStatus === "OPEN" ? "text-[#3B82F6]" : "text-red-500"}`}>
+                            {commissionStatus}
+                        </span>
                     </h2>
                     <p className="text-xs sm:text-sm md:text-base text-[#16377D]/80 mt-1">
                         Here are some samples of commission categories.

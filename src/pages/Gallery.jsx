@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-
-import { artworks } from "../data/artworks";
+import { useApp } from "../context/AppContext"; // Menggunakan useApp dari AppContext
 
 export default function Gallery() {
+    // Mengambil data artworks dinamis dari context
+    const { artworks } = useApp();
+
     const artworks4x5 = artworks.filter(
         (artwork) => artwork.ratio === "4:5"
     );
@@ -46,7 +48,7 @@ export default function Gallery() {
                     {artworks16x9[0] && (
                         <div className="mx-auto flex aspect-[16/9] max-w-[1180px] items-center justify-center bg-[#E5F3FF]/40">
                             <img
-                                src={artworks16x9[0].image}
+                                src={artworks16x9[0].image || artworks16x9[0].src}
                                 alt={artworks16x9[0].title}
                                 className="h-full w-full object-contain"
                             />
@@ -58,7 +60,6 @@ export default function Gallery() {
                     ARTWORK COLLAGE
                 ======================================== */}
                 <section className="mx-auto mt-3 max-w-[1170px] sm:mt-[25px]">
-                    {/* Menggunakan items-stretch agar tinggi kolom kiri dan kanan sejajar */}
                     <div className="grid grid-cols-1 gap-3 sm:grid-cols-[30%_70%] items-stretch">
 
                         {/* Kolom Kiri: 2 Artwork kecil */}
@@ -66,7 +67,7 @@ export default function Gallery() {
                             {artworks4x5[0] && (
                                 <div className="flex flex-1 w-full aspect-[4/5] sm:aspect-auto items-center justify-center bg-[#E5F3FF]/40">
                                     <img
-                                        src={artworks4x5[0].image}
+                                        src={artworks4x5[0].image || artworks4x5[0].src}
                                         alt={artworks4x5[0].title}
                                         className="h-full w-full object-contain"
                                     />
@@ -76,7 +77,7 @@ export default function Gallery() {
                             {artworks4x5[2] && (
                                 <div className="flex flex-1 w-full aspect-[4/5] sm:aspect-auto items-center justify-center bg-[#E5F3FF]/40">
                                     <img
-                                        src={artworks4x5[2].image}
+                                        src={artworks4x5[2].image || artworks4x5[2].src}
                                         alt={artworks4x5[2].title}
                                         className="h-full w-full object-contain"
                                     />
@@ -88,7 +89,7 @@ export default function Gallery() {
                         {artworks4x5[1] && (
                             <div className="flex w-full items-center justify-center bg-[#E5F3FF]/40 aspect-[5/4]">
                                 <img
-                                    src={artworks4x5[1].image}
+                                    src={artworks4x5[1].image || artworks4x5[1].src}
                                     alt={artworks4x5[1].title}
                                     className="h-full w-full object-contain"
                                 />
@@ -105,7 +106,7 @@ export default function Gallery() {
                     {artworks16x9[1] && (
                         <div className="flex aspect-[16/9] w-full items-center justify-center bg-[#E5F3FF]/40">
                             <img
-                                src={artworks16x9[1].image}
+                                src={artworks16x9[1].image || artworks16x9[1].src}
                                 alt={artworks16x9[1].title}
                                 className="h-full w-full object-contain"
                             />
@@ -124,7 +125,7 @@ export default function Gallery() {
                                 className="flex aspect-[3/4] w-full items-center justify-center bg-[#E5F3FF]/40"
                             >
                                 <img
-                                    src={artwork.image}
+                                    src={artwork.image || artwork.src}
                                     alt={artwork.title}
                                     className="h-full w-full object-contain"
                                 />
@@ -132,14 +133,6 @@ export default function Gallery() {
                         ))}
                     </div>
                 </section>
-
-                {/* ========================================
-                    ARTIST STATEMENT
-                    Menggantikan placeholder abu-abu dari Figma
-                    dengan jeda bersuara — ganti kutipan di bawah
-                    dengan pernyataan/bio singkat kamu sendiri.
-                ======================================== */}
-
 
                 {/* ========================================
                     SQUARE ARTWORKS (1:1)
@@ -152,7 +145,7 @@ export default function Gallery() {
                                 className="flex aspect-square w-full items-center justify-center bg-[#E5F3FF]/40"
                             >
                                 <img
-                                    src={artwork.image}
+                                    src={artwork.image || artwork.src}
                                     alt={artwork.title}
                                     className="h-full w-full object-contain"
                                 />
@@ -176,7 +169,7 @@ export default function Gallery() {
                                 className="group relative flex aspect-[5/4] w-full items-center justify-center bg-[#E5F3FF]/40"
                             >
                                 <img
-                                    src={artwork.image}
+                                    src={artwork.image || artwork.src}
                                     alt={artwork.title}
                                     className="h-full w-full object-contain motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.04]"
                                 />
