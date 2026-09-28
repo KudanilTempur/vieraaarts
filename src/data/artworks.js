@@ -14,7 +14,7 @@ const items16x9 = Array.from({ length: 3 }, (_, i) => ({
     aspect: "16/9",
 }));
 
-const items3x4 = Array.from({ length: 2 }, (_, i) => ({
+const items3x4 = Array.from({ length: 3 }, (_, i) => ({
     id: i + 12,
     title: `Artwork ${i + 12}`,
     image: `/artworks/3_4-artwork-${i + 1}.png`,
